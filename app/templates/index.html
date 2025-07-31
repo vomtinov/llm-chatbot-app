@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>LLM Chatbot</title>
+  <style>
+    body { font-family: sans-serif; margin:2rem; }
+    input { width:300px; padding:8px; }
+    button{padding:8px;}
+    .resp{margin-top:1rem;padding:12px;background:#f0f0f0;}
+  </style>
+</head>
+<body>
+  <h1>Ask the LLM</h1>
+  <form method="post" action="/ask">
+    <input name="message" placeholder="Your question…" required>
+    <button type="submit">Send</button>
+  </form>
+  {% if response %}
+    <div class="resp"><strong>Response:</strong><br>{{ response }}</div>
+  {% endif %}
+</body>
+</html>
